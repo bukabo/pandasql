@@ -14,6 +14,8 @@ times = pd.date_range(start_date, periods=999, freq='D')
 df = pd.DataFrame({'id': users_id,
                    'date': times})
 df['action'] = act
+df['action2'] = np.random.choice(action, len(df))
+
 # print(df.groupby(['action']).size())
 
 sql = """Select * from df 
