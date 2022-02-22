@@ -18,8 +18,9 @@ df['action2'] = np.random.choice(action, len(df))
 
 # print(df.groupby(['action']).size())
 
-sql = """Select * from df 
-      where action = 'камень'
+sql = """Select action, action2, count(*) as cnt from df 
+      --where action = 'камень'
+      group by action, action2
       """
 
 print(sqldf(sql))
